@@ -34,12 +34,29 @@ flowchart TD
 
 ---
 
-### GATE 0: Presentación y Selección del Concepto Transversal
+### GATE 0: Preparación del Entorno (Clone & Bootstrap) y Presentación del Concepto
 
-#### Discurso del Alumno
+#### Discurso y Acción en Pantalla del Alumno
 > *"Hola a todos y hola profesor. Para abrir la sesión práctica, voy a compartir mi pantalla y ejecutar el ejercicio de principio a fin tal y como lo haremos después cada uno de nosotros.*
 >
-> *Para esta demostración he elegido el concepto transversal **'Contexto'**. ¿Por qué? Porque al revisar las 6 lecciones de nuestro corpus (`01-genai-es`), me di cuenta de que la palabra 'contexto' aparece en todas las carpetas, pero significando cosas completamente distintas:*
+> *Lo primero que debemos tener claro es la **separación entre el corpus y el motor del Second Brain**:*
+> 1. *El repositorio donde estamos (`74-Workshop-SecondBain`) es nuestro **paquete de datos**: contiene los corpus preparados en carpetas `raw/` para que no perdamos tiempo de taller descargando o scrapeando fuentes.*
+> 2. *Pero el **motor de trabajo** (las reglas del agente, el pipeline de compilación de Karpathy y los generadores de Obsidian) reside en [`therobotacademy/obsidian-llm-wiki`](https://github.com/therobotacademy/obsidian-llm-wiki).*
+>
+> *Por tanto, el paso inicial indispensable que he realizado (y que todos haremos en la fase de preparación) es:*
+> ```bash
+> # 1. Clonar el repositorio base del motor wiki
+> git clone -b master https://github.com/therobotacademy/obsidian-llm-wiki.git
+>
+> # 2. Copiar nuestro corpus seleccionado (01-genai-es) dentro del motor
+> cp -R 01-genai-es/raw obsidian-llm-wiki/
+>
+> # 3. Ejecutar el bootstrap del vault (con Obsidian cerrado)
+> # El skill 'obsidian-vault-builder' crea wiki/ y su configuración .obsidian/ con colores y layouts
+> ```
+>
+> *Con el entorno listo y el vault inicializado, os muestro el concepto transversal que he seleccionado para mi demostración: **'Contexto'**.*
+> *¿Por qué 'Contexto'? Porque al revisar las 6 lecciones de nuestro corpus (`01-genai-es`), me di cuenta de que la palabra 'contexto' aparece en todas las carpetas, pero significando cosas completamente distintas:*
 > - *En **fundamentos**, es la ventana matemática de tokens que puede procesar la atención de un Transformer.*
 > - *En **prompting**, es la instrucción del sistema y los ejemplos que enmarcan la tarea.*
 > - *En **RAG**, es la información externa que inyectamos para fundamentar (*grounding*) al modelo y evitar que invente datos.*
@@ -47,17 +64,17 @@ flowchart TD
 >
 > *Mi objetivo no es solo dejar que la IA cree notas, sino auditar si el Second Brain entiende estas conexiones o si genera una masa confusa de texto, y corregirlo con mis propias manos.*
 >
-> *Profesor, tengo la estructura lista: fuentes conservadas en `raw/`, espacio limpio en `wiki/` y Obsidian preparado. ¿Arranco con el primer lote?"*
+> *Profesor, tengo el entorno clonado, el vault con `bootstrap` listo y las fuentes en `raw/`. ¿Arranco con el primer lote de fundamentos?"*
 
 #### Bloque de Control del Gate 0
 ```markdown
 ---
-### ⏸️ [GATE 0: PRESENTACIÓN Y ENFOQUE] — Esperando al profesor
-- **Demostrado a la clase:** Justificación del concepto "Contexto", objetivo del ejercicio y arquitectura base (`raw/` inmutable vs `wiki/` editable).
-- **Pregunta sugerida para lanzar a la clase:** *"Antes de que empiece a ingestar, ¿alguno de vosotros tiene en mente otro concepto que crea que va a cruzar varias lecciones como 'contexto'?"*
+### ⏸️ [GATE 0: ENTORNO, PREPARACIÓN Y ENFOQUE] — Esperando al profesor
+- **Demostrado a la clase:** Clonado de `obsidian-llm-wiki`, copia de `01-genai-es/raw/`, bootstrap del vault (`wiki/` + `.obsidian/`), y justificación del concepto transversal "Contexto".
+- **Pregunta sugerida para lanzar a la clase:** *"¿Por qué separamos el paquete de fuentes (corpus) del repositorio del motor wiki en lugar de mezclarlo todo en un solo repo?"*
 - **Comandos del profesor:**
-  - `Avanzar` -> Iniciar la ingesta del Lote A.
-  - `Profundizar en [X]` -> Pide al alumno que aclare algún aspecto previo.
+  - `Avanzar` -> Iniciar la compilación del Lote A (Fundamentos).
+  - `Profundizar en [X]` -> Preguntar sobre el bootstrap o la estructura de Obsidian.
 ---
 ```
 
