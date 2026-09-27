@@ -7,13 +7,16 @@
 
 ---
 
-## 1. Estructura del Repositorio de la Práctica
+## 1. Relación de Repositorios y Estructura
+
+* **Repositorio Motor:** [`therobotacademy/obsidian-llm-wiki`](https://github.com/therobotacademy/obsidian-llm-wiki) (contiene los skills de vault builder, pipeline de Karpathy y reglas del agente).
+* **Repositorio Corpus:** `74-Workshop-SecondBain` (paquete de datos con fuentes `raw/` pre-organizadas para el taller).
 
 ```text
 demo-alumno/
 ├── README-taller.md          # Este documento de resumen del taller
 ├── revision-humana.md        # Registro canónico de la intervención y curación humana
-├── wiki/                     # Notas conceptuales compiladas y curadas
+├── wiki/                     # Notas conceptuales compiladas y curadas (Obsidian vault)
 │   └── contexto.md           # Nota hub curada con enlaces bidireccionales y fuentes
 └── raw/ -> ../01-genai-es/raw # Fuentes originales conservadas intactas
 ```
