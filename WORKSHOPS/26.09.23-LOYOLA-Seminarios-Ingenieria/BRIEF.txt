@@ -1,0 +1,3 @@
+Gestión del Conocimiento con Agentes IA aplicado a Investigación
+----------------------------------------------------------------
+Inspirado en el patrón LLM Wiki del referente en IA Andrej Karpathy (antes en OpenAI y ahora en Anthropic), explicaremos los fundamentos que permiten construir un Second Brain basado en grafos (Obsidian + LLM), y cómo aplicarlo a tareas de investigación.
